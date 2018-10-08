@@ -1,6 +1,13 @@
 #!/bin/env python
-
+import urllib
 import urllib2
-request = urllib2.Request("http://www.baidu.com")
+
+#values = {"username":"","password":""}
+values = {}
+values["username"] = "duan@hust.edu.cn"
+values["password"] = "@dQQ1365710661"
+data = urllib.urlencode(values)
+url = "https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn"
+request = urllib2.Request(url,data)
 response = urllib2.urlopen(request)
 print response.read()
